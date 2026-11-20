@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reports - Fitness 8 Gym</title>
+    <link rel="icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <nav id="nav" class="nav"></nav>
+    <main class="container">
+        <h1>Reports</h1>
+        <div id="pageMsg" class="msg" hidden></div>
+
+        <section class="card">
+            <h2>Overdue memberships</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Member</th><th>Email</th><th>Plan</th><th>Expired on</th><th>Days overdue</th></tr>
+                    </thead>
+                    <tbody id="overdueBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Class attendance</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Class</th><th>Start</th><th>Capacity</th><th>Reserved</th><th>Confirmed</th><th>Attended</th><th>Cancelled</th></tr>
+                    </thead>
+                    <tbody id="attendanceBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/reports.js"></script>
+</body>
+</html>

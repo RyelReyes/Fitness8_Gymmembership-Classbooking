@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reservations - Fitness 8 Gym</title>
+    <link rel="icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <nav id="nav" class="nav"></nav>
+    <main class="container">
+        <h1 id="pageTitle">Reservations</h1>
+        <div id="pageMsg" class="msg" hidden></div>
+
+        <section class="card" id="detailCard" hidden>
+            <h2>Reservation details</h2>
+            <div id="detailBody"></div>
+            <button type="button" class="secondary small" id="closeDetail">Close</button>
+        </section>
+
+        <section class="card">
+            <div class="row" style="margin-bottom:12px">
+                <label for="statusFilter" style="margin:0">Show:</label>
+                <select id="statusFilter" style="width:auto">
+                    <option value="">All statuses</option>
+                    <option>Reserved</option>
+                    <option>Confirmed</option>
+                    <option>Attended</option>
+                    <option>Cancelled</option>
+                </select>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Member</th><th>Class</th><th>Class time</th><th>Status</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="reservationsBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/reservations.js"></script>
+</body>
+</html>
