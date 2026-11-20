@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard - Fitness 8 Gym</title>
+    <link rel="icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <nav id="nav" class="nav"></nav>
+    <main class="container">
+        <section class="hero-banner">
+            <div>
+                <h1 id="welcome">Dashboard</h1>
+                <p>Fitness 8 Quezon Avenue - where your fitness journey begins</p>
+            </div>
+        </section>
+        <div id="pageMsg" class="msg" hidden></div>
+
+        <section class="card" id="memberCard" hidden>
+            <h2>My membership</h2>
+            <div id="memberInfo" class="muted">Loading...</div>
+        </section>
+
+        <section class="card" id="adminCard" hidden>
+            <h2>Overdue memberships</h2>
+            <div class="stat" id="overdueCount">-</div>
+            <p class="muted">Active members whose membership has expired. <a href="reports.html">See the report</a></p>
+        </section>
+
+        <section class="card">
+            <h2>Quick links</h2>
+            <div class="row" id="quickLinks"></div>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

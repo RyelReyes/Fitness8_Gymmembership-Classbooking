@@ -1,0 +1,449 @@
+﻿/* Owner: Reyes | shared styles - Fitness 8 blue, matte glass look */
+:root {
+    --blue-900: #02194a;
+    --blue-700: #0238a0;
+    --blue-500: #014ec3; /* Fitness 8 logo blue */
+    --blue-400: #1d6dff;
+    --text: #f2f7ff;
+    --muted: #b9cdf3;
+    --glass: rgba(255, 255, 255, 0.10);
+    --glass-strong: rgba(255, 255, 255, 0.16);
+    --glass-border: rgba(255, 255, 255, 0.22);
+    --danger: #e5484d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.45;
+    background: linear-gradient(135deg, var(--blue-900), var(--blue-500) 60%, #0a5fe0) fixed;
+    position: relative;
+}
+
+    /* blurred gym building behind everything */
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(rgba(2, 25, 74, 0.80), rgba(1, 78, 195, 0.65)), url("../images/building.jpg") center / cover no-repeat;
+        filter: blur(5px);
+        transform: scale(1.05);
+    }
+
+a {
+    color: #cfe0ff;
+}
+
+/* ---------- matte glass surfaces ---------- */
+.glass, .card, .nav, .footer {
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(18px) saturate(115%);
+    backdrop-filter: blur(18px) saturate(115%);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 28px rgba(0, 12, 60, 0.35);
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    border-width: 0 0 1px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+    .nav .brand img {
+        height: 34px;
+        display: block;
+        margin-right: 14px;
+    }
+
+    .nav a {
+        color: var(--text);
+        text-decoration: none;
+        padding: 6px 11px;
+        border-radius: 8px;
+    }
+
+        .nav a:hover {
+            background: var(--glass-strong);
+        }
+
+        .nav a.active {
+            background: var(--blue-400);
+            color: #fff;
+        }
+
+    .nav .spacer {
+        flex: 1;
+    }
+
+    .nav .who {
+        font-size: 0.88rem;
+        margin-right: 8px;
+        color: var(--muted);
+    }
+
+.container {
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+    .container.narrow {
+        max-width: 460px;
+    }
+
+h1 {
+    margin: 0 0 16px;
+    font-size: 1.7rem;
+}
+
+h2 {
+    margin: 0 0 12px;
+    font-size: 1.15rem;
+}
+
+.card {
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+.grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* ---------- forms ---------- */
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--muted);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 9px 11px;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    font: inherit;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.10);
+    color-scheme: dark;
+}
+
+    input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    select option {
+        color: #0b1f4d;
+        background: #fff;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        outline: 2px solid var(--blue-400);
+        background: rgba(255, 255, 255, 0.16);
+    }
+
+.field {
+    margin-bottom: 12px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+    .checkbox input {
+        width: auto;
+    }
+
+button {
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: var(--blue-400);
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+    button:hover {
+        background: #3a82ff;
+    }
+
+    button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    button.secondary {
+        background: var(--glass-strong);
+        border-color: var(--glass-border);
+    }
+
+        button.secondary:hover {
+            background: rgba(255, 255, 255, 0.26);
+        }
+
+    button.danger {
+        background: var(--danger);
+    }
+
+        button.danger:hover {
+            background: #f0666a;
+        }
+
+    button.small {
+        padding: 4px 10px;
+        font-size: 0.82rem;
+        margin: 2px 2px 2px 0;
+    }
+
+.btn-link {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background: var(--glass-strong);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+    text-decoration: none;
+}
+
+    .btn-link:hover {
+        background: rgba(255, 255, 255, 0.26);
+    }
+
+/* ---------- messages ---------- */
+.msg {
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+}
+
+    .msg.error {
+        background: rgba(229, 72, 77, 0.28);
+        border-color: rgba(255, 140, 140, 0.6);
+    }
+
+    .msg.success {
+        background: rgba(46, 190, 120, 0.28);
+        border-color: rgba(120, 235, 180, 0.6);
+    }
+
+    .msg.info {
+        background: rgba(255, 255, 255, 0.14);
+        border-color: var(--glass-border);
+    }
+
+/* ---------- tables ---------- */
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+th, td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    vertical-align: top;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.10);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+}
+
+td.center {
+    text-align: center;
+    color: var(--muted);
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- badges ---------- */
+.badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: #dfe8fb;
+    color: #0b1f4d;
+}
+
+.badge-active, .badge-confirmed, .badge-attended {
+    background: #8be9b4;
+    color: #05361d;
+}
+
+.badge-reserved, .badge-none {
+    background: #ffe38a;
+    color: #4a3500;
+}
+
+.badge-overdue, .badge-cancelled, .badge-inactive, .badge-full, .badge-started {
+    background: #ff9b9e;
+    color: #4a0507;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 3px;
+}
+
+.stat {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+/* ---------- hero / banner with the Fitness 8 building ---------- */
+.hero-banner {
+    position: relative;
+    min-height: 190px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    padding: 26px;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(rgba(2, 25, 74, 0.25), rgba(2, 25, 74, 0.85)), url("../images/building.jpg") center 35% / cover;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 28px rgba(0, 12, 60, 0.35);
+}
+
+    .hero-banner h1 {
+        margin: 0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-banner p {
+        margin: 4px 0 0;
+        color: #dbe7ff;
+    }
+
+.login-layout {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: 1.15fr 1fr;
+    max-width: 1100px;
+    margin: 28px auto;
+    padding: 0 16px;
+    align-items: start;
+}
+
+.brand-hero {
+    text-align: center;
+}
+
+    .brand-hero .logo-wide {
+        width: min(100%, 420px);
+        margin: 6px auto 4px;
+        display: block;
+    }
+
+    .brand-hero .building {
+        width: 100%;
+        border-radius: 14px;
+        margin-top: 14px;
+        border: 1px solid var(--glass-border);
+        display: block;
+    }
+
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.tile {
+    padding: 12px 6px;
+    border-radius: 12px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    font-size: 0.82rem;
+}
+
+    .tile span {
+        display: block;
+        font-size: 1.7rem;
+    }
+
+.footer {
+    margin-top: 30px;
+    padding: 18px 20px;
+    border-width: 1px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+    .footer img {
+        height: 44px;
+    }
+
+@media (max-width: 800px) {
+    .login-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav {
+        padding: 8px 10px;
+    }
+
+    th, td {
+        padding: 7px 6px;
+    }
+
+    .tiles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

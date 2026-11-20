@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Classes - Fitness 8 Gym</title>
+    <link rel="icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <nav id="nav" class="nav"></nav>
+    <main class="container">
+        <h1>Classes</h1>
+        <div id="pageMsg" class="msg" hidden></div>
+
+        <section class="card" id="adminPanel" hidden>
+            <h2 id="formTitle">Add class</h2>
+            <form id="classForm" novalidate>
+                <div class="grid">
+                    <div class="field">
+                        <label for="name">Class name</label>
+                        <input id="name" maxlength="100" />
+                    </div>
+                    <div class="field">
+                        <label for="instructor">Instructor</label>
+                        <select id="instructor"></select>
+                    </div>
+                    <div class="field">
+                        <label for="startTime">Start</label>
+                        <input id="startTime" type="datetime-local" />
+                    </div>
+                    <div class="field">
+                        <label for="duration">Duration (minutes)</label>
+                        <input id="duration" type="number" min="15" max="240" value="60" />
+                    </div>
+                    <div class="field">
+                        <label for="capacity">Capacity</label>
+                        <input id="capacity" type="number" min="1" max="200" value="10" />
+                    </div>
+                    <div class="field">
+                        <label for="description">Description</label>
+                        <input id="description" maxlength="300" />
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" id="saveBtn">Save class</button>
+                    <button type="button" class="secondary" id="cancelBtn" hidden>Cancel edit</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2 id="listTitle">Class schedule</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Class</th><th>Instructor</th><th>Start</th><th>Duration</th><th>Slots</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="classesBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card" id="rosterCard" hidden>
+            <h2 id="rosterTitle">Roster</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Member</th><th>Status</th><th>Booked on</th></tr></thead>
+                    <tbody id="rosterBody"></tbody>
+                </table>
+            </div>
+            <button type="button" class="secondary small" id="closeRoster">Close</button>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/classes.js"></script>
+</body>
+</html>

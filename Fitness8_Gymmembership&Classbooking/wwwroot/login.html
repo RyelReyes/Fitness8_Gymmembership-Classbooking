@@ -1,0 +1,85 @@
+﻿v
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Fitness 8 Gym</title>
+    <link rel="icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <main class="login-layout">
+        <section class="brand-hero">
+            <img class="logo-wide" src="images/logo-fitness8.png" alt="Fitness 8 - Where your fitness journey begins" />
+            <p class="muted">Quezon Avenue branch - membership and class booking</p>
+            <img class="building" src="images/building.jpg" alt="Fitness 8 Quezon Avenue building" />
+            <div class="tiles">
+                <div class="tile"><span>&#127947;</span>Strength</div>
+                <div class="tile"><span>&#127939;</span>Cardio</div>
+                <div class="tile"><span>&#129495;</span>Yoga</div>
+                <div class="tile"><span>&#129354;</span>Boxing</div>
+            </div>
+            <p><a class="btn-link" href="https://www.facebook.com/fitness8ph" target="_blank" rel="noopener">Visit our Facebook page</a></p>
+        </section>
+
+        <section>
+            <div id="pageMsg" class="msg" hidden></div>
+
+            <div class="card">
+                <h2>Log in</h2>
+                <form id="loginForm">
+                    <div class="field">
+                        <label for="loginUser">Username</label>
+                        <input id="loginUser" required autocomplete="username" />
+                    </div>
+                    <div class="field">
+                        <label for="loginPass">Password</label>
+                        <input id="loginPass" type="password" required autocomplete="current-password" />
+                    </div>
+                    <button type="submit" id="loginBtn">Log in</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>New member? Register</h2>
+                <form id="registerForm">
+                    <div class="field">
+                        <label for="regName">Full name</label>
+                        <input id="regName" required maxlength="100" />
+                    </div>
+                    <div class="field">
+                        <label for="regEmail">Email</label>
+                        <input id="regEmail" type="email" required maxlength="100" />
+                    </div>
+                    <div class="field">
+                        <label for="regPhone">Phone (optional)</label>
+                        <input id="regPhone" maxlength="30" />
+                    </div>
+                    <div class="field">
+                        <label for="regPlan">Membership plan</label>
+                        <select id="regPlan" required><option value="Monthly">Monthly - 30 days</option><option value="Quarterly">Quarterly - 90 days</option><option value="Annual">Annual - 365 days</option></select>
+                    </div>
+                    <div class="field">
+                        <label for="regUser">Username</label>
+                        <input id="regUser" required minlength="3" maxlength="50" autocomplete="username" />
+                        <div class="hint">3 to 50 characters</div>
+                    </div>
+                    <div class="field">
+                        <label for="regPass">Password</label>
+                        <input id="regPass" type="password" required minlength="6" maxlength="100" autocomplete="new-password" />
+                        <div class="hint">At least 6 characters</div>
+                    </div>
+                    <button type="submit" id="registerBtn">Create account</button>
+                </form>
+                <p class="hint">Your selected membership activates automatically after registration. Payment is handled by the admin.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
