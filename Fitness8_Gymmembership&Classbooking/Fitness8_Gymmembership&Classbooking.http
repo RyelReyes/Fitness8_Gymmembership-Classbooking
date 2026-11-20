@@ -1,0 +1,6 @@
+@Fitness8_Gymmembership_Classbooking_HostAddress = http://localhost:5162
+
+GET {{Fitness8_Gymmembership_Classbooking_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
